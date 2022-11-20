@@ -25,7 +25,7 @@ export class UserService {
     const post = posts.find((post) => post.postId === postId);
 
     if (
-      user[0].favorites &&
+      user[0] &&
       !user[0]?.favorites.some((favorite) => favorite.postId === postId)
     )
       return await this.repository.addFavorite(post, userId);
