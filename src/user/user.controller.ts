@@ -32,7 +32,6 @@ export class UserController {
   @UseGuards(JwtAuthGuard)
   @Post(':id/favorites')
   addFavorite(@Param('id') userId, @Body() { postId }: { postId: string }) {
-    console.log(userId);
     return this.userService.addFavorite(postId, userId);
   }
 
